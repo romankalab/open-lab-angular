@@ -5,11 +5,13 @@
       <label for="hero-name">Hero name: </label>
       <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
+    <div><span>money: </span>{{hero.money}}</div>
     <h3>Inventory:</h3>
     <ul>
-      <li *ngFor="let item of items">
+      <li *ngFor="let item of hero.items">
         <span>{{item.name}}</span>
       </li>
     </ul>
+    <button>buy item</button>
     <button (click)="goBack()">go back</button>
   </div>
