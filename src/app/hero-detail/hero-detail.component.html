@@ -12,6 +12,8 @@
         <span>{{item.name}}</span>
       </li>
     </ul>
-    <button>buy item</button>
+    <a routerLink="/hero-detail/{{hero.id}}/shop">
+      <button>buy item</button>
+    </a>
     <button (click)="goBack()">go back</button>
   </div>

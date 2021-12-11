@@ -1,0 +1,21 @@
+.items li {
+    list-style: none;
+    margin-bottom: 0.5em;
+}
+.items span {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background-color: rgb(146, 145, 145);
+    margin: 0;
+    padding: 0.3em;
+    height: 1.6em;
+    border-radius: 4px;
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+  }
+  .items button{
+      padding:0.5em;
+      margin-left: 0.5em;
+      display: inline;
+  }

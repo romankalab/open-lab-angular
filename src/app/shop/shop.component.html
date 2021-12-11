@@ -1,0 +1,6 @@
+<h2>Items in store:</h2>
+<ul class="items">
+  <li *ngFor="let item of items">
+      <span>{{item.name}}</span><button (click)="buy(item)">buy this item</button>
+  </li>
+</ul>

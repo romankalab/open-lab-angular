@@ -17,6 +17,9 @@ export class ItemDetailComponent implements OnInit {
     this.itemService.getItem(id)
       .subscribe(item => this.item = item);
   }
+  goBack(): void {
+    this.location.back();
+  }
 
   constructor(private route: ActivatedRoute, private itemService: ItemService, private location: Location) { }
 
