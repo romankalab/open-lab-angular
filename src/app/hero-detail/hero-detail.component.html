@@ -8,8 +8,9 @@
     <div><span>money: </span>{{hero.money}}</div>
     <h3>Inventory:</h3>
     <ul>
-      <li *ngFor="let item of hero.items">
+      <li *ngFor="let item of hero.items" class="item">
         <span>{{item.name}}</span>
+        <button (click)="sellItem(item)">Sell item</button>
       </li>
     </ul>
     <a routerLink="/hero-detail/{{hero.id}}/shop">

@@ -3,6 +3,7 @@ import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from '../hero.service';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,7 +11,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero | undefined;
+  hero: Hero ={ id: 1, name: '1',items:[], money: 0 }
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
@@ -18,6 +19,12 @@ export class HeroDetailComponent implements OnInit {
   }
   goBack(): void {
     this.location.back();
+  }
+
+  sellItem(item: Item): void {
+    const index = this.hero.items.indexOf(item, 0);
+    this.hero.items.splice(index, 1);
+    this.hero.money = Number(this.hero.money.valueOf() + item.price.valueOf());
   }
 
   constructor(
