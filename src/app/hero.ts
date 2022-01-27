@@ -1,8 +1,8 @@
 import { Item } from "./item";
 
 export interface Hero {
-    id: Number;
+    id: number;
     name: string;
     items: Item[];
-    money: Number;
+    money: number;
 }

@@ -11,6 +11,23 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
+  sortBy(property: String) {
+    if (property == "id")
+    {
+      this.heroes.sort((a,b) => a.id - b.id);
+    }
+    else if(property == "name")
+    {
+      this.heroes.sort((a,b) => a.name.localeCompare(b.name));
+    }
+    else if(property == "money")
+    {
+      this.heroes.sort((a,b) => a.money - b.money);
+    }
+  }
+
+  
+
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {

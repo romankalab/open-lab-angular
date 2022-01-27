@@ -13,13 +13,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { ItemsComponent } from './items/items.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ShopComponent } from './shop/shop.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   imports: [
     RouterModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   declarations: [
     AppComponent,
