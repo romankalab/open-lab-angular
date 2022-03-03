@@ -11,7 +11,7 @@ import { Item } from '../item';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero ={ id: 1, name: '1',items:[], money: 0 }
+  hero: Hero ={ id: 0, name: ' ',items:[], money: 0 }
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
