@@ -29,6 +29,7 @@ export class ShopComponent implements OnInit {
     {
       this.hero.items.push(item)
       this.hero.money = Number(this.hero.money.valueOf() - item.price.valueOf());
+      this.heroService.updateHero(this.hero).subscribe();
     }
     this.location.back();
   }
