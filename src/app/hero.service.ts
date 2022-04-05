@@ -47,6 +47,7 @@ updateHero(hero: Hero): Observable<any> {
 
 addHero(hero: Hero): Observable<Hero> {
   hero.money = 200;
+  hero.items = [];
   return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
     tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
     catchError(this.handleError<Hero>('addHero'))
